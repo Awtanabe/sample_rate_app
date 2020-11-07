@@ -1,0 +1,22 @@
+
+<h3>レビューを書く</h3>
+
+商品名<%= @product.name%>
+
+<br>
+
+<div id="stars">
+  <i class="fas fa-star rate-good"></i>
+  <i class="fas fa-star rate-good"></i>
+  <i class="fas fa-star rate-good"></i>
+  <i class="fas fa-star rate-good"></i>
+  <i class="fas fa-star rate-good"></i>
+</div>
+
+
+<%= form_for([@product, Rate.new]) do |form|%>
+  <%= form.hidden_field :score ,id: "target_value"%>
+  <%= form.text_field :comment%>
+  <%= form.submit%>
+<%end%>
+

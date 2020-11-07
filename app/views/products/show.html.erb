@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @product.user.email %>
+</p>
+
+<p>
+
+    <% if @product.rate_avrate == 0%>
+      レビューなし
+    <%elsif @product.rate_avrate == 5%>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>          
+    <%elsif @product.rate_avrate == 4%>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>          
+
+    <%elsif @product.rate_avrate == 3%>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>
+    <%elsif @product.rate_avrate == 2%>
+      <i class="fas fa-star rate-good"></i>
+      <i class="fas fa-star rate-good"></i>          
+    <%elsif @product.rate_avrate == 1%>
+      <i class="fas fa-star rate-good"></i>
+    <%end%>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
