@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :products do
+    collection do
+      get :search
+    end
     resources :rates, only: [:new,:create, :destroy]
   end
   devise_for :users

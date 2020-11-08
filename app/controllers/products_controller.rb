@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  # rescue_from StandardError, with: :customeerrror
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    @products = @products.p_name(params[:name]) if params[:name].present? 
   end
 
   # GET /products/1
